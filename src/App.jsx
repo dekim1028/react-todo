@@ -1,6 +1,7 @@
 import React from 'react';
 import List from './List';
 import Input from './Input';
+import './App.css';
 
 class App extends React.Component{
   state = {
@@ -28,9 +29,9 @@ class App extends React.Component{
 
     return (
       <main>
-        <h1>TODO LIST</h1>
-        <Input addTodo={this.addTodo.bind(this)}/>
-        <List todoList={todoList}/>
+          <h1>TODO</h1>
+          <Input addTodo={this.addTodo.bind(this)}/>
+          <List todoList={todoList}/>
       </main>
     )
   }
