@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './Input.css';
 
 const Input = (props) =>{
     const {addTodo} = props;
@@ -19,16 +20,14 @@ const Input = (props) =>{
 
     return (
         <div className="input-wrap">
-            <label>
-                제목
-                <input type="text" value={title} onChange={onChangeTitle}/>
-            </label>
-            <label>
-                내용
-                <input type="text" value={description} onChange={onChangeDescription}/>
-            </label>
+            <div>
+                <input className="subject" placeholder="제목" type="text" value={title} onChange={onChangeTitle}/>
+            </div>
+            <div>
+                <textarea className="content" value={description} onChange={onChangeDescription}></textarea>
+            </div>
 
-            <button onClick={onClickButton}>추가</button>
+            <button className="addBtn" onClick={onClickButton}>추가</button>
         </div>
     )
 }

@@ -18,7 +18,6 @@ const List = (props) =>{
     );
     return(
         <>
-            <h2>List</h2>
             <ul>
                 {items}
             </ul>

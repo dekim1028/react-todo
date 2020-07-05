@@ -1,0 +1,23 @@
+.input-wrap div{
+  margin:10px;
+}
+
+.subject{
+  color: #464A4A;
+  border: none;
+  border-bottom: 0.5px solid #349393;
+  width:80%;
+  padding:5px 2px;
+  font-size: 15px;
+}
+
+.content{
+  color: #464A4A;
+  border: none;
+  border: 0.5px solid #349393;
+  border-radius: 5px;
+  height:50px;
+  width:80%;
+  resize: none;
+  padding:5px;
+}

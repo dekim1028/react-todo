@@ -8,6 +8,11 @@ main{
   margin: 0 auto;
   margin-top:60px;
   text-align: center;
-  padding: 20px;
   box-shadow: 10px 10px 20px gray;
+}
+
+.logo{
+  padding:20px;
+  background-color: #349393;
+  color: white;
 }

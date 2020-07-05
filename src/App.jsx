@@ -29,7 +29,7 @@ class App extends React.Component{
 
     return (
       <main>
-          <h1>TODO</h1>
+          <h1 class="logo">TODO</h1>
           <Input addTodo={this.addTodo.bind(this)}/>
           <List todoList={todoList}/>
       </main>
