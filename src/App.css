@@ -9,6 +9,7 @@ main{
   margin-top:60px;
   text-align: center;
   box-shadow: 10px 10px 20px gray;
+  min-height: 700px;
 }
 
 .logo{

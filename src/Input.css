@@ -21,3 +21,25 @@
   resize: none;
   padding:5px;
 }
+
+.addBtn{
+  background-color: #349393;
+  border:2px solid #349393;
+  color:white;
+  padding:5px 30px;
+  vertical-align: center;
+  margin-bottom:10px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.addBtn:hover{
+  background-color: white;
+  border: 2px solid #349393 ;
+  color:#349393;
+  padding:5px 30px;
+  vertical-align: center;
+  margin-bottom:10px;
+  font-size: 15px;
+  border-radius: 5px;
+}
