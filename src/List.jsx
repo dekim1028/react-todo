@@ -2,10 +2,14 @@ import React from 'react';
 import './List.css';
 
 const ListItem = ({title, description, completed}) => (
-    <li class="ellipsis">
+    <li className="ellipsis">
         <input type="checkbox" checked={completed}></input>
         <span>{title}</span>
-        <p>{description}</p>
+        <div>
+            <textarea className="description" readOnly>
+                {description}
+            </textarea>
+        </div>
     </li>
 )
 

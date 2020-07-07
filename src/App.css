@@ -15,5 +15,8 @@ main{
 .logo{
   padding:20px;
   background-color: #349393;
-  color: white;
+}
+
+.logo>img{
+  width:150px;
 }

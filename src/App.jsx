@@ -2,6 +2,7 @@ import React from 'react';
 import List from './List';
 import Input from './Input';
 import './App.css';
+import logo from './image/logo.png';
 
 class App extends React.Component{
   state = {
@@ -29,7 +30,7 @@ class App extends React.Component{
 
     return (
       <main>
-          <h1 class="logo">TODO</h1>
+          <div className="logo"><img src={logo}></img></div>
           <Input addTodo={this.addTodo.bind(this)}/>
           <List todoList={todoList}/>
       </main>
