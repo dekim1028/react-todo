@@ -4,7 +4,7 @@ import './List.css';
 const ListItem = ({title, description, completed}) => (
     <li className="ellipsis">
         <input type="checkbox" checked={completed}></input>
-        <span>{title}</span>
+        <span>{title}</span> <span className="descriptionBtn">▼</span>
         <div>
             <textarea className="description" readOnly>
                 {description}

@@ -13,11 +13,21 @@
 }
 
 .description{
-    margin: 5px 17px;
-    width: 380px;
+    margin: 10px 17px;
+    width: 370px;
     resize: none;
     line-height: 20px;
     padding:5px;
-    border: 0.5px solid #349393;
-    border-radius: 5px;
+    border: none;
+    border-left: 4px solid #349393;
+}
+
+.descriptionBtn{
+    color: #349393;
+    cursor:pointer;
+}
+
+.descriptionBtn:hover{
+    color: #1CBC4C;
+    cursor:pointer;
 }
