@@ -1,17 +1,24 @@
 import React from 'react';
 import './List.css';
 
-const ListItem = ({title, description, completed}) => (
-    <li className="ellipsis">
-        <input type="checkbox" checked={completed}></input>
-        <span>{title}</span> <span className="descriptionBtn">▼</span>
-        <div>
-            <textarea className="description" readOnly>
-                {description}
-            </textarea>
-        </div>
-    </li>
-)
+const ListItem = ({title, description, completed}) => {
+    
+    const onClickArrow = () =>{
+        
+    }
+
+    return (
+        <li className="ellipsis">
+            <input type="checkbox" checked={completed}></input>
+            <span>{title}</span> <span className="descriptionBtn" onclick={onClickArrow}>▼</span>
+            <div>
+                <textarea className="description" readOnly>
+                    {description}
+                </textarea>
+            </div>
+        </li>
+    )
+}
 
 const List = (props) =>{
     const {todoList} = props;
@@ -21,6 +28,7 @@ const List = (props) =>{
             <ListItem {...item}/>
         )
     );
+
     return(
         <div className="listDiv">
             <ul>
