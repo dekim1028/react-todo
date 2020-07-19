@@ -12,13 +12,39 @@ class App extends React.Component{
   addTodo({title,description}){
     const {todoList} = this.state;
 
+    const todoID = new Date().toString();
+
     this.setState({
       todoList: [...todoList,{
         title, description,
         completed:false,
-        id: new Date().toString()
+        id: todoID
       }]
     });
+
+    return todoID;
+  }
+
+  toggleTodoStatus(todoId) {
+    const targetIndex = this.state.todoList.findIndex(
+      ({ id }) => id === todoId
+    );
+
+    const { todoList } = this.state;
+    const changedTodo = {
+      ...todoList[targetIndex],
+      completed: !todoList[targetIndex].completed
+    };
+
+    todoList.splice(targetIndex, 1, changedTodo);
+
+    this.setState({
+      todoList
+    });
+  }
+
+  saveTodo(title, description, id){
+    //TODO : LocalStorage 저장
   }
 
   removeTodo(){
@@ -31,8 +57,10 @@ class App extends React.Component{
     return (
       <main>
           <div className="logo"><img src={logo}></img></div>
-          <Input addTodo={this.addTodo.bind(this)}/>
-          <List todoList={todoList}/>
+          <Input addTodo={this.addTodo.bind(this)} saveTodo={this.saveTodo.bind(this)}/>
+          <List
+            toggleTodoStatus={this.toggleTodoStatus.bind(this)}
+            todoList={todoList}/>
       </main>
     )
   }
