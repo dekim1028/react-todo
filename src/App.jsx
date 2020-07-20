@@ -43,7 +43,7 @@ class App extends React.Component{
     });
   }
 
-  saveTodo(title, description, id){
+  saveLocalStorage(title, description, id){
     //TODO : LocalStorage 저장
   }
 
@@ -57,7 +57,7 @@ class App extends React.Component{
     return (
       <main>
           <div className="logo"><img src={logo}></img></div>
-          <Input addTodo={this.addTodo.bind(this)} saveTodo={this.saveTodo.bind(this)}/>
+          <Input addTodo={this.addTodo.bind(this)} saveTodo={this.saveLocalStorage.bind(this)}/>
           <List
             toggleTodoStatus={this.toggleTodoStatus.bind(this)}
             todoList={todoList}/>

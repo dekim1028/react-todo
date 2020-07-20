@@ -3,7 +3,7 @@ import './Input.css';
 
 const Input = (props) =>{
     const {addTodo} = props;
-    const {saveTodo} = props;
+    const {saveLocalStorage} = props;
     const [title,setTitle] = useState('');
     const [description, setDescription] = useState('');
 
@@ -20,7 +20,7 @@ const Input = (props) =>{
             alert("제목과 내용을 모두 입력해주세요");
         }else{
             const id = addTodo({title,description});
-            saveTodo(title, description, id);
+            saveLocalStorage(title, description, id);
             setTitle("");
             setDescription("");
         }
