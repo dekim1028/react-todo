@@ -57,7 +57,7 @@ class App extends React.Component{
     return (
       <main>
           <div className="logo"><img src={logo}></img></div>
-          <Input addTodo={this.addTodo.bind(this)} saveTodo={this.saveLocalStorage.bind(this)}/>
+          <Input addTodo={this.addTodo.bind(this)} saveLocalStorage={this.saveLocalStorage.bind(this)}/>
           <List
             toggleTodoStatus={this.toggleTodoStatus.bind(this)}
             todoList={todoList}/>
