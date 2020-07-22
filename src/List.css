@@ -67,3 +67,11 @@ input[type=checkbox]:checked + label::before{
     background-size: cover;
     background-position: center center;
 }
+
+.editIcon{
+    width:18px;
+}
+
+.delIcon{
+    width:18px;
+}
