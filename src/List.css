@@ -13,7 +13,7 @@
 }
 
 .description{
-    margin: 0px 17px 10px 17px;
+    margin: 0px 17px 10px 5px;
     width: 370px;
     resize: none;
     line-height: 20px;
@@ -68,10 +68,19 @@ input[type=checkbox]:checked + label::before{
     background-position: center center;
 }
 
-.editIcon{
+.Icon{
+    float: left;
+    display: grid;
+}
+
+.Icon img{
     width:18px;
 }
 
-.delIcon{
-    width:18px;
+.editIcon:hover{
+    content: url('./image/edit_icon_2.png');
+}
+
+.delIcon:hover{
+    content: url('./image/del_icon_2.png');
 }

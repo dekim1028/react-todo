@@ -41,7 +41,7 @@ const ListItem = ({title, id, description, completed, toggleTodoStatus}) => {
             <div style={{
                 display: isShowDetail ? 'block' : 'none'
                 }}>
-                <div>
+                <div className="Icon">
                     <img className="editIcon" src={editIcon}></img>
                     <img className="delIcon" src={delIcon}></img>
                 </div>
