@@ -3,8 +3,6 @@ import './List.css';
 import { useState } from 'react';
 import editIcon from './image/edit_icon.png';
 import delIcon from './image/del_icon.png';
-import editIcon2 from './image/edit_icon_2.png';
-import delIcon2 from './image/del_icon_2.png';
 
 const ListItem = ({title, id, description, completed, toggleTodoStatus}) => {
     const [arrow, setArrow] = useState('▼');
@@ -18,11 +16,18 @@ const ListItem = ({title, id, description, completed, toggleTodoStatus}) => {
         }
 
         setShowDetail(true);
-        setArrow('▲');
+        setArrow('▲'); 
     }
 
     const onChangeCompleted = () =>{
         toggleTodoStatus(id);
+    }
+
+    const onClickDelBtn = () =>{
+        const delCheck = window.confirm("정말 삭제하시겠습니까?");
+        if(!delCheck){
+
+        }
     }
 
     return (
@@ -43,7 +48,7 @@ const ListItem = ({title, id, description, completed, toggleTodoStatus}) => {
                 }}>
                 <div className="Icon">
                     <img className="editIcon" src={editIcon}></img>
-                    <img className="delIcon" src={delIcon}></img>
+                    <img className="delIcon" src={delIcon} onClick={onClickDelBtn}></img>
                 </div>
                 <textarea className="description" readOnly value={description}></textarea>
             </div>
