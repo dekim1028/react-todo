@@ -47,8 +47,11 @@ class App extends React.Component{
     //TODO : LocalStorage 저장
   }
 
-  removeTodo(){
-
+  removeTodo(todoId){
+    const { todoList } = this.state;
+    this.setState({
+      todoList:todoList.filter(list => list.id !== todoId)
+    });
   }
 
   render(){
@@ -60,6 +63,7 @@ class App extends React.Component{
           <Input addTodo={this.addTodo.bind(this)} saveLocalStorage={this.saveLocalStorage.bind(this)}/>
           <List
             toggleTodoStatus={this.toggleTodoStatus.bind(this)}
+            removeTodo={this.removeTodo.bind(this)}
             todoList={todoList}/>
       </main>
     )

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import editIcon from './image/edit_icon.png';
 import delIcon from './image/del_icon.png';
 
-const ListItem = ({title, id, description, completed, toggleTodoStatus}) => {
+const ListItem = ({title, id, description, completed, toggleTodoStatus, removeTodo}) => {
     const [arrow, setArrow] = useState('▼');
     const [isShowDetail, setShowDetail] = useState(false);
 
@@ -25,8 +25,8 @@ const ListItem = ({title, id, description, completed, toggleTodoStatus}) => {
 
     const onClickDelBtn = () =>{
         const delCheck = window.confirm("정말 삭제하시겠습니까?");
-        if(!delCheck){
-
+        if(delCheck){
+            removeTodo(id);
         }
     }
 
@@ -57,13 +57,14 @@ const ListItem = ({title, id, description, completed, toggleTodoStatus}) => {
 }
 
 const List = (props) =>{
-    const { todoList , toggleTodoStatus} = props;
+    const { todoList , toggleTodoStatus, removeTodo} = props;
 
     const items = todoList.map(
         item => (
             <ListItem
                 key={`list-item-${item.id}`}
                 toggleTodoStatus={toggleTodoStatus}
+                removeTodo={removeTodo}
                 {...item}/>
         )
     );
