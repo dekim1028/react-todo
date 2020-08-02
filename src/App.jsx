@@ -54,6 +54,9 @@ class App extends React.Component{
     });
   }
 
+  updateTodo(){
+  }
+
   render(){
     const {todoList} = this.state;
 
@@ -64,6 +67,7 @@ class App extends React.Component{
           <List
             toggleTodoStatus={this.toggleTodoStatus.bind(this)}
             removeTodo={this.removeTodo.bind(this)}
+            updateTodo={this.updateTodo.bind(this)}
             todoList={todoList}/>
       </main>
     )

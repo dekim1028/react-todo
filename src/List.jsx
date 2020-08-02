@@ -4,7 +4,7 @@ import { useState } from 'react';
 import editIcon from './image/edit_icon.png';
 import delIcon from './image/del_icon.png';
 
-const ListItem = ({title, id, description, completed, toggleTodoStatus, removeTodo}) => {
+const ListItem = ({title, id, description, completed, toggleTodoStatus, removeTodo, updateTodo}) => {
     const [arrow, setArrow] = useState('▼');
     const [isShowDetail, setShowDetail] = useState(false);
 
@@ -30,6 +30,11 @@ const ListItem = ({title, id, description, completed, toggleTodoStatus, removeTo
         }
     }
 
+    const onClickUpdateBtn = () =>{
+        //TODO: 수정 버튼 클릭
+        updateTodo();
+    }
+
     return (
         <li className="ellipsis">
             <div style={{marginBottom: "10px"}}>
@@ -47,7 +52,7 @@ const ListItem = ({title, id, description, completed, toggleTodoStatus, removeTo
                 display: isShowDetail ? 'block' : 'none'
                 }}>
                 <div className="Icon">
-                    <img className="editIcon" src={editIcon}></img>
+                    <img className="editIcon" src={editIcon} onClick={onClickUpdateBtn}></img>
                     <img className="delIcon" src={delIcon} onClick={onClickDelBtn}></img>
                 </div>
                 <textarea className="description" readOnly value={description}></textarea>
@@ -57,7 +62,7 @@ const ListItem = ({title, id, description, completed, toggleTodoStatus, removeTo
 }
 
 const List = (props) =>{
-    const { todoList , toggleTodoStatus, removeTodo} = props;
+    const { todoList , toggleTodoStatus, removeTodo, updateTodo} = props;
 
     const items = todoList.map(
         item => (
@@ -65,6 +70,7 @@ const List = (props) =>{
                 key={`list-item-${item.id}`}
                 toggleTodoStatus={toggleTodoStatus}
                 removeTodo={removeTodo}
+                updateTodo={updateTodo}
                 {...item}/>
         )
     );
