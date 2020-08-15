@@ -52,8 +52,8 @@ const ListItem = ({title, id, description, completed, toggleTodoStatus, removeTo
                 display: isShowDetail ? 'block' : 'none'
                 }}>
                 <div className="Icon">
-                    <img className="editIcon" src={editIcon} onClick={onClickUpdateBtn}></img>
-                    <img className="delIcon" src={delIcon} onClick={onClickDelBtn}></img>
+                    <img className="editIcon" src={editIcon} onClick={onClickUpdateBtn} alt="수정"></img>
+                    <img className="delIcon" src={delIcon} onClick={onClickDelBtn} alt="삭제"></img>
                 </div>
                 <textarea className="description" readOnly value={description}></textarea>
             </div>

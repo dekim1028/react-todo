@@ -44,7 +44,7 @@ class App extends React.Component{
   }
 
   saveLocalStorage(title, description, id){
-    //TODO : LocalStorage 저장
+    
   }
 
   removeTodo(todoId){
